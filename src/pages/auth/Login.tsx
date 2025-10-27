@@ -4,7 +4,7 @@ import { userAuthService } from '../../utils/auth';
 
 const Login = () => {
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({
+  const [ticketForm, setTicketForm] = useState({
     email: '',
     password: '',
   });
@@ -18,13 +18,13 @@ const Login = () => {
   const validateLoginForm = (): boolean => {
     const newErrors: { email?: string; password?: string } = {};
 
-    if (!formData.email) {
+    if (!ticketForm.email) {
       newErrors.email = 'Email is required';
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+    } else if (!/\S+@\S+\.\S+/.test(ticketForm.email)) {
       newErrors.email = 'Email is invalid';
     }
 
-    if (!formData.password) {
+    if (!ticketForm.password) {
       newErrors.password = 'Password is required';
     }
 
@@ -41,8 +41,8 @@ const Login = () => {
 
     setTimeout(() => {
       const result = userAuthService.userLogin(
-        formData.email,
-        formData.password
+        ticketForm.email,
+        ticketForm.password
       );
 
       if (result.success) {
@@ -57,24 +57,24 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-600 to-purple-600 px-4">
-      <div className="max-w-md w-full">
-        <div className="bg-white rounded-2xl shadow-2xl p-8">
-          <div className="text-center mb-8">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-600 to-purple-600 px-4">
+      <section className="max-w-md w-full">
+        <section className="bg-white rounded-2xl shadow-2xl p-8">
+          <section className="text-center mb-8">
             <h1 className="text-3xl font-bold text-gray-900 mb-2">
               Welcome Back
             </h1>
             <p className="text-gray-600">Sign in to your account</p>
-          </div>
+          </section>
 
           {errors.general && (
-            <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg">
+            <section className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg">
               <p className="text-sm text-red-600">{errors.general}</p>
-            </div>
+            </section>
           )}
 
           <form onSubmit={handleSubmitForm} className="space-y-6">
-            <div>
+            <section>
               <label
                 htmlFor="email"
                 className="block text-sm font-medium text-gray-700 mb-2"
@@ -84,9 +84,9 @@ const Login = () => {
               <input
                 id="email"
                 type="email"
-                value={formData.email}
+                value={ticketForm.email}
                 onChange={(e) => {
-                  setFormData({ ...formData, email: e.target.value });
+                  setTicketForm({ ...ticketForm, email: e.target.value });
                   setErrors({ ...errors, email: '', general: '' });
                 }}
                 className={`w-full px-4 py-3 rounded-lg border focus:ring-2 focus:outline-none transition`}
@@ -95,9 +95,9 @@ const Login = () => {
               {errors.email && (
                 <p className="mt-1 text-sm text-red-600">{errors.email}</p>
               )}
-            </div>
+            </section>
 
-            <div>
+            <section>
               <label
                 htmlFor="password"
                 className="block text-sm font-medium text-gray-700 mb-2"
@@ -107,9 +107,9 @@ const Login = () => {
               <input
                 id="password"
                 type="password"
-                value={formData.password}
+                value={ticketForm.password}
                 onChange={(e) => {
-                  setFormData({ ...formData, password: e.target.value });
+                  setTicketForm({ ...ticketForm, password: e.target.value });
                   setErrors({ ...errors, password: '', general: '' });
                 }}
                 className={`w-full px-4 py-3 rounded-lg focus:ring-2 border focus:outline-none transition`}
@@ -118,7 +118,7 @@ const Login = () => {
               {errors.password && (
                 <p className="mt-1 text-sm text-red-600">{errors.password}</p>
               )}
-            </div>
+            </section>
 
             <button
               type="submit"
@@ -139,7 +139,7 @@ const Login = () => {
             </Link>
           </p>
 
-          <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+          <section className="mt-6 p-4 bg-gray-50 rounded-lg">
             <p className="text-xs text-gray-600 text-center font-medium mb-2">
               Test Credentials:
             </p>
@@ -148,19 +148,19 @@ const Login = () => {
               <br />
               Password: password123
             </p>
-          </div>
-        </div>
+          </section>
+        </section>
 
-        <div className="text-center mt-6">
+        <section className="text-center mt-6">
           <Link
             to="/"
             className="text-white hover:text-purple-100 transition text-sm"
           >
             Back to Home
           </Link>
-        </div>
-      </div>
-    </div>
+        </section>
+      </section>
+    </section>
   );
 };
 

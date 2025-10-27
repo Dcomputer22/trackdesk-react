@@ -5,14 +5,14 @@ import { Link } from 'react-router-dom';
 const Hero = () => {
   return (
     <section className="relative bg-indigo-600 text-white overflow-hidden min-h-[600px] flex items-center flex-col">
-      <div
+      <section
         className="absolute top-0 right-0 w-96 h-96 bg-pink-400 rounded-full opacity-50 blur-3xl -translate-y-1/2 translate-x-1/4"
         aria-hidden="true"
       />
 
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 relative z-10 w-full">
-        <div className="">
-          <div className="text-center">
+      <section className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 relative z-10 w-full">
+        <section className="">
+          <section className="text-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
               TrackDesk
             </h1>
@@ -20,9 +20,9 @@ const Hero = () => {
               Where your tickets are effortlessly managed with our powerful and
               intuitive platform
             </p>
-          </div>
+          </section>
 
-          <div className="mt-20 flex flex-col gap-5 sm:flex-row">
+          <section className="mt-20 flex flex-col gap-5 sm:flex-row">
             <Link
               to={'auth/signup'}
               className="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:border-2 hover:border-purple-600 transition shadow-lg"
@@ -35,13 +35,13 @@ const Hero = () => {
             >
               Login
             </Link>
-          </div>
-        </div>
-      </div>
+          </section>
+        </section>
+      </section>
 
-      <div className="absolute bottom-0 left-0 w-full">
+      <section className="absolute bottom-0 left-0 w-full">
         <WavySvg />
-      </div>
+      </section>
     </section>
   );
 };
