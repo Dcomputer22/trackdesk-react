@@ -5,7 +5,6 @@ import SignUp from './pages/auth/SignUp';
 import Dashboard from './pages/dashboard/Dashboard';
 import ProtectedRoute from './components/ProtectedRoute';
 import TicketManagement from './pages/ticketmanagment/TicketManagement';
-import './App.css';
 
 function App() {
   return (

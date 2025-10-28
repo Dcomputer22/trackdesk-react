@@ -1,4 +1,3 @@
-// pages/Signup.tsx
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { userAuthService } from '../../utils/auth';
