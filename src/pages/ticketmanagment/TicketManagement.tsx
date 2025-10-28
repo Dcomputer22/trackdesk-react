@@ -293,10 +293,10 @@ const TicketManagement = () => {
         )}
 
         {isModalOpen && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-            <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-              <div className="p-8">
-                <div className="flex justify-between items-center mb-6">
+          <section className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+            <section className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+              <section className="p-8">
+                <section className="flex justify-between items-center mb-6">
                   <h2 className="text-2xl font-bold text-gray-900">
                     {editTicket ? 'Edit Ticket' : 'Create New Ticket'}
                   </h2>
@@ -318,10 +318,10 @@ const TicketManagement = () => {
                       />
                     </svg>
                   </button>
-                </div>
+                </section>
 
                 <form onSubmit={handleSubmitForm} className="space-y-5">
-                  <div>
+                  <section>
                     <label
                       htmlFor="title"
                       className="block text-sm font-medium text-gray-700 mb-2"
@@ -346,9 +346,9 @@ const TicketManagement = () => {
                         {errors.title}
                       </p>
                     )}
-                  </div>
+                  </section>
 
-                  <div>
+                  <section>
                     <label
                       htmlFor="description"
                       className="block text-sm font-medium text-gray-700 mb-2"
@@ -378,9 +378,9 @@ const TicketManagement = () => {
                         {errors.description}
                       </p>
                     )}
-                  </div>
+                  </section>
 
-                  <div>
+                  <section>
                     <label
                       htmlFor="status"
                       className="block text-sm font-medium text-gray-700 mb-2"
@@ -410,9 +410,9 @@ const TicketManagement = () => {
                         {errors.status}
                       </p>
                     )}
-                  </div>
+                  </section>
 
-                  <div className="flex gap-3 pt-4">
+                  <section className="flex gap-3 pt-4">
                     <button
                       type="button"
                       onClick={closeModal}
@@ -426,11 +426,11 @@ const TicketManagement = () => {
                     >
                       {editTicket ? 'Update Ticket' : 'Create Ticket'}
                     </button>
-                  </div>
+                  </section>
                 </form>
-              </div>
-            </div>
-          </div>
+              </section>
+            </section>
+          </section>
         )}
         <Footer />
       </main>
