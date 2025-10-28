@@ -1,4 +1,3 @@
-import React from 'react';
 import WavySvg from '../assets/WavySvg';
 import { Link } from 'react-router-dom';
 

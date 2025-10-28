@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { userAuthService } from '../../utils/auth';
 import Paper from '../../assets/PaperIcon';
@@ -44,6 +44,10 @@ const Dashboard = () => {
     userAuthService.logoutUser();
     navigate('/');
   };
+
+  useEffect(() => {
+    setUser(user);
+  }, []);
 
   return (
     <section className="min-h-screen bg-gray-200">
